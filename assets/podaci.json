@@ -1,0 +1,221 @@
+{
+    "ordinacija": {
+        "0": {
+            "naziv": "Ordinacija Milan Mazalin",
+            "opis": "Najstarija i najbolja opća medicina u ZG-u",
+            "koordinata_id": "0",
+            "adresa": "Vrbik 10a",
+            "postanski_broj_id": "0",
+            "grad_id": "0",
+            "telefon": "033604214",
+            "mobitel": "0994584421",
+            "email": "milan.mazalin@gmail.com",
+            "djelatnost_id": "0"
+        },
+        "1": {
+            "naziv": "Ordinacija Marija Vouk",
+            "opis": "Najmodernija pedijatrijska medicina u Osječkoj županiji",
+            "koordinata_id": "1",
+            "adresa": "Biševska bb",
+            "postanski_broj_id": "3",
+            "grad_id": "3",
+            "telefon": "031501750",
+            "mobitel": "0988789870",
+            "email": "marija.vouk@gmail.com",
+            "djelatnost_id": "3"
+        },
+        "2": {
+            "naziv": "Ordinacija Miroslav Lesić",
+            "opis": "Novootvorena stomatološka ordinacija u Virovitičko-podravskoj županiji",
+            "koordinata_id": "2",
+            "adresa": "Dr. Mije Pupeka 11",
+            "postanski_broj_id": "1",
+            "grad_id": "1",
+            "telefon": "033721609",
+            "mobitel": "0998306777",
+            "email": "miroslav.lesic@gmail.com",
+            "djelatnost_id": "1"
+        },
+        "3": {
+            "naziv": "Ordinacija Olga Angelovska",
+            "opis": "Pulska ginekološka ordinacija",
+            "koordinata_id": "3",
+            "adresa": "Palladiova 22",
+            "postanski_broj_id": "2",
+            "grad_id": "2",
+            "telefon": "052393060",
+            "mobitel": "0986573467",
+            "email": "olga.angelovska@gmail.com",
+            "djelatnost_id": "2"
+        },
+        "4": {
+            "naziv": "Ordinacija Milan Jukić",
+            "opis": "Najefikasnija obiteljska medicina u Primorsko-goranskoj županiji",
+            "koordinata_id": "4",
+            "adresa": "Josipa Mohorića 27b",
+            "postanski_broj_id": "4",
+            "grad_id": "4",
+            "telefon": "051639567",
+            "mobitel": "099123739",
+            "email": "milan.jukic@gmail.com",
+            "djelatnost_id": "0"
+        }
+    },
+    "koordinata": {
+        "0": {
+            "lat": "45.79528809",
+            "lng": "15.96941090"
+        },
+        "1": {
+            "lat": " 45.546823",
+            "lng": "18.710869"
+        },
+        "2": {
+            "lat": " 45.831589",
+            "lng": "17.382229"
+        },
+        "3": {
+            "lat": " 44.856950",
+            "lng": "13.836429"
+        },
+        "4": {
+            "lat": " 45.353745",
+            "lng": "14.385112"
+        }
+    },
+    "djelatnost": {
+        "0": {
+            "naziv": "Opća obiteljska medicina"
+        },
+        "1": {
+            "naziv": "Stomatologija"
+        },
+        "2": {
+            "naziv": "Zdravstvena zaštita žena"
+        },
+        "3": {
+            "naziv": "Pedijatrija"
+        }
+    },
+    "grad": {
+        "0": {
+            "naziv": "Zagreb"
+        },
+        "1": {
+            "naziv": "Virovitica"
+        },
+        "2": {
+            "naziv": "Pula"
+        },
+        "3": {
+            "naziv": " Osijek"
+        },
+        "4": {
+            "naziv": "Rijeka"
+        }
+    },
+    "postanski_broj": {
+        "0": {
+            "broj": "10000"
+        },
+        "1": {
+            "broj": "33000"
+        },
+        "2": {
+            "broj": "52100"
+        },
+        "3": {
+            "broj": "31000"
+        },
+        "4": {
+            "broj": "51000"
+        }
+    },
+    "radno_mjesto": {
+        "0": {
+            "naziv": "dr. med."
+        },
+        "1": {
+            "naziv": "medicinski tehničar"
+        }
+    },
+    "zaposlenik": {
+        "0": {
+            "ime": "Dubravko",
+            "prezime": "Josipović",
+            "ordinacija_id": "0",
+            "djelatnost_id": "0",
+            "radno_mjesto_id": "0"
+        },
+        "1": {
+            "ime": "Jasna",
+            "prezime": "Lebinac",
+            "ordinacija_id": "0",
+            "djelatnost_id": "0",
+            "radno_mjesto_id": "1"
+        },
+        "2": {
+            "ime": "Željka",
+            "prezime": "Duvnjak",
+            "ordinacija_id": "0",
+            "djelatnost_id": "0",
+            "radno_mjesto_id": "1"
+        },
+        "3": {
+            "ime": "Ivana",
+            "prezime": "Horvat",
+            "ordinacija_id": "1",
+            "djelatnost_id": "3",
+            "radno_mjesto_id": "0"
+        },
+        "4": {
+            "ime": "Dejan",
+            "prezime": "Novak",
+            "ordinacija_id": "1",
+            "djelatnost_id": "3",
+            "radno_mjesto_id": "1"
+        },
+        "5": {
+            "ime": "Marko",
+            "prezime": "Markić",
+            "ordinacija_id": "2",
+            "djelatnost_id": "1",
+            "radno_mjesto_id": "0"
+        },
+        "6": {
+            "ime": "Matea",
+            "prezime": "Marković",
+            "ordinacija_id": "2",
+            "djelatnost_id": "1",
+            "radno_mjesto_id": "1"
+        },
+        "7": {
+            "ime": "Izabela",
+            "prezime": "Ivić",
+            "ordinacija_id": "3",
+            "djelatnost_id": "2",
+            "radno_mjesto_id": "0"
+        },
+        "8": {
+            "ime": "Ivona",
+            "prezime": "Jagetić",
+            "ordinacija_id": "3",
+            "djelatnost_id": "2",
+            "radno_mjesto_id": "1"
+        },
+        "9": {
+            "ime": "Ljubo",
+            "prezime": "Majstorović",
+            "ordinacija_id": "4",
+            "djelatnost_id": "0",
+            "radno_mjesto_id": "0"
+        },
+        "10": {
+            "ime": "Jelena",
+            "prezime": "Špoljarić",
+            "ordinacija_id": "4",
+            "djelatnost_id": "0",
+            "radno_mjesto_id": "1"
+        }
+    }
+}

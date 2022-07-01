@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+	<title>PIN Zdravko | Dom zdravlja</title>
+	<meta name="description" content="Evidencija osoblja i ordinacija doma zdravlja „PIN Zdravko“" />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<script src="assets/plugins/jquery/jquery-3.2.1.min.js"></script>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="assets/plugins/bootstrap-3.3.7-dist/css/bootstrap.css">
+	<link rel="icon" href="img/symbol_medical_18040.ico">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<div id="wrapper">
+		<a id="logo" class="logo" href="index.html"><img src="img/symbol_medical_18040.png" class="img-responsive"></a>
+		<nav class="navbar navbar-fixed-top navbar-default ">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button id="ChangeToggle" type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+						data-target="#myNavbar" aria-expanded="true" aria-controls="navbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<!--<a id="logo" class="logo" href="index.html"><img src="img/symbol_medical_18040.png"
+						class="img-responsive"></a>-->
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="active"><a href="index.html">Ordinacija</a></li>
+						<li><a href="pregled_ordinacija.html">Pregled ordinacija</a></li>
+						<li><a href="medicinsko_osoblje.html">Medicinsko osoblje</a></li>
+						<li><a href="karta.html">Pregled ordinacija po karti</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="jumbotron">
+			<div class="container">
+				<h1>Dobrodošli</h1>
+				<h3>na web stranicu PIN zdravko</h3>
+				<hr>
+				<h4> Jedinstvena web stranica koja Vam omogućuje olakšani pristup evidenciji
+					osoblja i ordinacija doma
+					zdravlja "PIN zdravko".
+				</h4>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div id="tablica">
+				<h1>Prikaz ordinacija</h1>
+				<hr>
+				<label for="add">DODAJ ORDINACIJU</label>
+				<button id="add" class="btn btn-danger" data-toggle="modal" data-target="#add-ord" value="click"><span
+						class="glyphicon glyphicon-plus"></span></button>
+
+			</div>
+
+			<table id="TablicaOrdinacije" class="table table-stripped table-responsive">
+				<thead>
+					<tr>
+						<th>R.br.</th>
+						<th>Naziv</th>
+						<th>Opis</th>
+						<th>Latitude</th>
+						<th>Longitude</th>
+						<th>Adresa</th>
+						<th>Poštanski broj</th>
+						<th>Grad</th>
+						<th>Telefon</th>
+						<th>Mobitel</th>
+						<th>Email</th>
+						<th>Djelatnost</th>
+						<th>Obriši</th>
+						<th>Ažuriraj</th>
+					</tr>
+				</thead>
+				<tbody>
+
+				</tbody>
+			</table>
+		</div>
+		<!--DODAVANJE ORDINACIJE-->
+		<div class="modal fade" id="add-ord" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							×
+						</button>
+						<h4 class="modal-title">DODAJ ORDINACIJU</h4>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="inptNaziv">Naziv ordinacije:</label>
+							<input type="text" class="form-control" id="inptNaziv" placeholder="Naziv">
+						</div>
+						<div class="form-group">
+							<label for="inptOpis">Opis:</label>
+							<textarea class="form-control" id="inptOpis" placeholder="Opis"></textarea>
+						</div>
+
+						<div class="form-group">
+							<label for="inptLatitude">Latitude:</label>
+							<input type="text"
+								oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+								maxlength="30" minlength="4" class="form-control" id="inptLatitude"
+								placeholder="ex. XX.XXXXXXX"></input>
+						</div>
+						<div class="form-group">
+							<label for="inptLongitude">Longitude:</label>
+							<input type="text"
+								oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+								maxlength="30" minlength="4" class="form-control" id="inptLongitude"
+								placeholder="ex. XX.XXXXXXX"></input>
+						</div>
+
+						<div class="form-group">
+							<label for="inptAdresa">Adresa:</label>
+							<input type="text" class="form-control" id="inptAdresa" placeholder="Adresa"></input>
+						</div>
+
+						<div class="form-group">
+							<label for="inptPostanski_broj">Poštanski broj:</label>
+							<input type="text"
+								oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+								maxlength="5" minlength="5" class="form-control" id="inptPostanski_broj"
+								placeholder="Poštanski broj"></input>
+						</div>
+
+						<div class="form-group">
+							<label for="inptGrad">Grad:</label>
+							<input type="text" class="form-control" id="inptGrad" placeholder="Grad">
+						</div>
+
+						<div class="form-group">
+							<label for="inptTelefon">Telefon:</label>
+							<input type="text"
+								oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');"
+								maxlength="9" minlength="9" class="form-control" id="inptTelefon"
+								placeholder="ex.033999888"></input>
+						</div>
+
+						<div class="form-group">
+							<label for="inptMobitel">Mobitel</label>
+							<input type="text"
+								oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');"
+								maxlength="10" minlength="9" class="form-control" id="inptMobitel"
+								placeholder="ex.09*******"></input>
+						</div>
+
+						<div class="form-group">
+							<label for="inptEmail">Email:</label>
+							<input type="email" class="form-control" id="inptEmail" placeholder="name@example.com">
+						</div>
+
+						<div class="form-group">
+							<label for="inptDjelatnost">Djelatnost:</label>
+							<select type="text" class="form-control" id="inptDjelatnost">
+								<option>Opća obiteljska medicina</option>
+								<option>Stomatologija</option>
+								<option>Zdravstvena zaštita žena</option>
+								<option>Pedijatrija</option>
+							</select>
+						</div>
+
+					</div>
+					<div class="modal-footer">
+						<button onclick="DodajOrdinaciju()" type="button" class="btn btn-success">Dodaj</button>
+						<button type="button" class="btn btn-danger" data-dismiss="modal">Odustani</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--AŽURIRANJE ORDINACIJE-->
+		<div class="modal fade" id="Uredi-Ordinaciju" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							×
+						</button>
+						<h4 class="modal-title">Uredi ordinaciju</h4>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="inptNoviNaziv">Naziv:</label>
+							<input type="text" class="form-control" id="inptNoviNaziv">
+						</div>
+						<div class="form-group">
+							<label for="inptNoviOpis">Opis:</label>
+							<textarea class="form-control" id="inptNoviOpis"></textarea>
+						</div>
+						<div class="form-group">
+							<label for="inptNovaLatituda">Latitude:</label>
+							<input type="text"
+								oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+								maxlength="30" minlength="4" class="form-control" id="inptNovaLatituda"
+								placeholder="ex. XX.XXXXXXX"></input>
+						</div>
+						<div class="form-group">
+							<label for="inptNovaLongituda">Longitude:</label>
+							<input type="text"
+								oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+								maxlength="30" minlength="4" class="form-control" id="inptNovaLongituda"
+								placeholder="ex. XX.XXXXXXX"></input>
+						</div>
+						<div class="form-group">
+							<label for="inptNovaAdresa">Adresa:</label>
+							<input type="text" class="form-control" id="inptNovaAdresa">
+						</div>
+						<div class="form-group">
+							<label for="inptNoviPostanski">Poštanski broj:</label>
+							<input type="text"
+								oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');"
+								maxlength="5" minlength="5" class="form-control" id="inptNoviPostanski">
+						</div>
+						<div class="form-group">
+							<label for="inptNoviGrad">Grad:</label>
+							<input type="text" class="form-control" id="inptNoviGrad">
+						</div>
+						<div class="form-group">
+							<label for="inptNoviTelefon">Telefon:</label>
+							<input type="text"
+								oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');"
+								maxlength="9" minlength="9" class="form-control" id="inptNoviTelefon">
+						</div>
+						<div class="form-group">
+							<label for="inptNoviMobitel">Mobitel:</label>
+							<input type="text"
+								oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');"
+								maxlength="10" minlength="9" class="form-control" id="inptNoviMobitel">
+						</div>
+						<div class="form-group">
+							<label for="inptNoviEmail">Email:</label>
+							<input type="email" class="form-control" id="inptNoviEmail">
+						</div>
+						<div class="form-group">
+							<label for="inptNovaDjelatnost">Djelatnost:</label>
+							<select type="text" class="form-control" id="inptNovaDjelatnost">
+								<option>Opća obiteljska medicina</option>
+								<option>Stomatologija</option>
+								<option>Zdravstvena zaštita žena</option>
+								<option>Pedijatrija</option>
+							</select>
+						</div>
+
+					</div>
+					<div id="uredi-ordinaciju-forma" class="modal-footer">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--FOOTER-->
+		<footer>
+			<div class="container-fluid">
+				<p>© Sandi Kovač 2020</p>
+			</div>
+		</footer>
+
+	</div>
+
+	<script src="assets/plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+	<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-analytics.js"></script>
+	<script src="js/firebase_config.js"></script>
+	<script src="js/ordinacije.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <title>PIN Zdravko | Dom zdravlja</title>
+    <meta name="description" content="Evidencija osoblja i ordinacija doma zdravlja „PIN Zdravko“" />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <script src="assets/plugins/jquery/jquery-3.2.1.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/plugins/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="icon" href="img/symbol_medical_18040.ico">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <a id="logo" class="logo" href="index.html"><img src="img/symbol_medical_18040.png" class="img-responsive"></a>
+        <nav class="navbar navbar-fixed-top navbar-default ">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button id="ChangeToggle" type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#myNavbar" aria-expanded="true" aria-controls="navbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- <a id="logo" class="logo" href="index.html"><img src="img/symbol_medical_18040.png"
+                        class="img-responsive"></a>-->
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="index.html">Ordinacija</a></li>
+                        <li><a href="pregled_ordinacija.html">Pregled ordinacija</a></li>
+                        <li class="active"><a href="medicinsko_osoblje.html">Medicinsko osoblje</a></li>
+                        <li><a href="karta.html">Pregled ordinacija po karti</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="jumbotron">
+            <div class="container">
+                <h1>Dobrodošli</h1>
+                <h3>na web stranicu PIN zdravko</h3>
+                <hr>
+                <h4> Jedinstvena web stranica koja Vam omogućuje olakšani pristup evidenciji
+                    osoblja i ordinacija doma
+                    zdravlja "PIN zdravko".
+                </h4>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div id="tablicaMed">
+                <h1>Prikaz medicinskog osoblja</h1>
+                <hr>
+                <div class="container">
+                <div id="tablica">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <label for="add">DODAJ OSOBLJE</label>
+                            <button id="add" class="btn btn-danger" data-toggle="modal" data-target="#add-osob"
+                                onclick=Popuni();><span class="glyphicon glyphicon-plus"></span></button>
+                        </div>
+                        <div class="col-md-auto">
+                            <label for="move">PRIJELAZ OSOBLJA</label>
+                            <button id="move" class="btn btn-danger" data-toggle="modal" data-target="#move-osob"
+                                onclick=PrijelazPopuni();><span class="glyphicon glyphicon-plus"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+            <table id="TablicaMedOsoblja" class="table table-stripped table-responsive">
+                <thead>
+                    <tr>
+                        <th>R.br.</th>
+                        <th>Ime</th>
+                        <th>Prezime</th>
+                        <th>Radno mjesto</th>
+                        <th>Ordinacija</th>
+                        <th>Djelatnost</th>
+                        <th>Obriši</th>
+                        <th>Uredi</th>
+                    </tr>
+                </thead>
+                <tbody style="text-align: center;">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+        <!--DODAVANJE OSOBLJA-->
+        <div class="modal fade" id="add-osob" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            ×
+                        </button>
+                        <h4 class="modal-title">DODAJ OSOBLJE</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="inptIme">Ime:</label>
+                            <input type="text" class="form-control" id="inptIme" placeholder="Ime">
+                        </div>
+                        <div class="form-group">
+                            <label for="inptPrezime">Prezime:</label>
+                            <input type="text" class="form-control" id="inptPrezime" placeholder="Prezime">
+                        </div>
+                        <div class="form-group">
+                            <label for="inptRadnoMjesto">Radno mjesto:</label>
+                            <select class="form-control" id="inptRadnoMjesto">
+                                <option>dr. med.</option>
+                                <option>medicinski tehničar</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="inptOdabOrdinaciju">Ordinacija</label>
+                            <select id="inptOdabOrdinaciju" class=" form-control">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button onclick="DodajOsoblje()" type="button" class="btn btn-success"
+                            >Dodaj</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Odustani</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--UREĐIVANJE OSOBLJA-->
+        <div class="modal fade" id="Uredi-Osoblje" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            ×
+                        </button>
+                        <h4 class="modal-title">UREĐIVANJE OSOBLJE</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="inptNovoIme">Ime:</label>
+                            <input type="text" class="form-control" id="inptNovoIme">
+                        </div>
+                        <div class="form-group">
+                            <label for="inptNovoPrezime">Prezime:</label>
+                            <input type="text" class="form-control" id="inptNovoPrezime">
+                        </div>
+                        <div class="form-group">
+                            <label for="inptNovoRadno">Radno mjesto:</label>
+                            <select class="form-control" id="inptNovoRadno">
+                                <option>dr. med.</option>
+                                <option>medicinski tehničar</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="inptodabNovuOrdinaciju">Ordinacija</label>
+                            <select id="inptodabNovuOrdinaciju" class=" form-control">
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inptodabNovuDjelatnost">Djelatnost</label>
+                            <select class="form-control" id="inptodabNovuDjelatnost">
+                                <option>Opća obiteljska medicina</option>
+                                <option>Stomatologija</option>
+                                <option>Zdravstvena zaštita žena</option>
+                                <option>Pedijatrija</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="uredi-osoblje-forma" class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--PRIJELAZ OSOBLJA-->
+        <div class="modal fade" id="move-osob" role="dialog">
+            <div class="modal-dialog">
+                <form>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                ×
+                            </button>
+                            <h4 class="modal-title">PRIJELAZ OSOBLJA</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="odabZaposlenika">Zaposlenik </label>
+                                <select id="odabZaposlenika" class="form-control">
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="odabOrdinaciju">Ordinacija</label>
+                                <select id="odabOrdinaciju" class=" form-control">
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="odabDjelatnost">Djelatnost</label>
+                                <select id="odabDjelatnost" class=" form-control">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button onclick="PrebaciZaposlenika()" type="button" class="btn btn-success">Kreiraj</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Odustani</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!--FOOTER-->
+		<footer>
+			<div class="container-fluid">
+				<p>© Sandi Kovač 2020</p>
+			</div>
+        </footer>
+        
+    </div>
+
+    <script src="assets/plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-analytics.js"></script>
+    <script src="js/firebase_config.js"></script>
+    <script src="js/med_osoblje.js"></script>
+</body>
+
+</html>

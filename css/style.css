@@ -1,0 +1,147 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 3px;
+}
+
+#wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+#wrapper1 {
+  min-height: 100%;
+  position: relative !important;
+  background-color: rgb(240, 222, 222) !important;
+}
+
+footer {
+  color: black;
+  background-color: #d3afaf7a;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  text-align: right;
+  padding-top: 15px;
+}
+
+/*NAVBAR */
+.navbar {
+  background-color: transparent;
+  border: none;
+}
+
+.navbar .active a {
+  background-color: rgb(235, 88, 88) !important;
+  color: #fff !important;
+}
+
+.navbar .active a:hover {
+  color: #fff !important;
+}
+
+.navbar li a {
+  color: black !important;
+  background-color: rgb(235, 188, 188) !important;
+  letter-spacing: 2px !important;
+}
+
+.navbar li a:hover {
+  color: red !important;
+  font-size: 14.5px !important;
+  transition: all 0.3s ease !important;
+}
+
+#myNavbar ul {
+  text-transform: uppercase;
+}
+
+/*LOGO*/
+.logo {
+  height: 70px;
+  width: 70px;
+  float: left;
+}
+
+/*JUMBOTRON*/
+.jumbotron {
+  background-color: rgba(211, 175, 175, 0.479);
+  text-align: center;
+}
+
+/*MOBILE MENU*/
+#ChangeToggle {
+  background-color: rgb(204, 183, 183);
+}
+
+#ChangeToggle .icon-bar {
+  background-color: rgb(255, 0, 0);
+}
+
+/*TABLICE*/
+#TablicaOrdinacije {
+  margin-bottom: 50px;
+}
+
+#TablicaOrdinacije thead tr th {
+  text-align: center;
+}
+
+#TablicaOrdinacije tbody {
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+#TablicaOrdinacije1 {
+  margin-bottom: 50px;
+}
+
+#TablicaOrdinacije1 thead tr th {
+  text-align: center;
+}
+
+#TablicaOrdinacije1 tbody {
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+#TablicaMedOsoblja {
+  margin-bottom: 50px;
+}
+
+#TablicaMedOsoblja thead tr th {
+  text-align: center;
+}
+
+#TablicaMedOsoblja tbody {
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+#TablicaOsoblja thead tr th {
+  font-weight: bold;
+}
+
+/*FILTRIRANJE*/
+#Filter {
+  text-align: center;
+}
+
+#map {
+  min-height: 50%;
+  width: 70%;
+  right: 15%;
+  left: 15%;
+  position: absolute;
+  top: 15%;
+  bottom: 10%;
+  border: 3px solid black;
+}
